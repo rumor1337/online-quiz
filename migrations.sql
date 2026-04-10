@@ -1,0 +1,9 @@
+USE quiz;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username VARCHAR(25) NOT NULL,
+    password VARCHAR(72) NOT NULL,
+    createTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+    rights ENUM('admin', 'user')
+);

@@ -13,10 +13,18 @@
         <label for="username">username</label>
         <input type="text" name="username" class="username">
         <label for="password">password</label>
-        <input type="text" name="password" class="password">
+        <input type="password" name="password" class="password">
 
         <button>submit</button>
     </form>
+
+    <?php if(!empty($errors)) {
+
+        foreach($errors as $error) {
+            echo $error;
+        }
+
+    } ?>
 
 </div>
 

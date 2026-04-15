@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,3 +37,24 @@
 
 </body>
 </html>
+=======
+<?php
+
+    ob_start();
+    session_start();
+    require "Sessions.php";
+
+    require("views/components/navbar.php");
+    
+?>
+
+main page
+
+<?php
+
+    $content = ob_get_clean();
+
+    require("views/components/layout.php");
+
+?>
+>>>>>>> 5da1286c256c691c71a1e28c3a637dafc2066397

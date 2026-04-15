@@ -1,6 +1,10 @@
 <header>
     <nav class="navbar">
-        <a href="/login">login</a>
-        <a href="/register">register</a>
+        <a href="/">home</a>
+        <?php if(empty($_SESSION)) { ?>
+            <a href="/login">login</a>
+        <?php } else {?>
+            <a href="/logout">logout</a>
+        <?php }?>
     </nav>
 </header>

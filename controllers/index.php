@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz</title>
-</head>
-<body>
-    <h1>quiz page</h1>
-</body>
-</html>
+<?php
+
+    ob_start();
+    session_start();
+    require "Sessions.php";
+
+    require("views/components/navbar.php");
+    
+?>
+
+main page
+
+<?php
+
+    $content = ob_get_clean();
+
+    require("views/components/layout.php");
+
+?>

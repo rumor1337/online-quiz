@@ -2,8 +2,8 @@
 
 return [
     "database" => [
-        "host" => "mysql",
-        "port" => 3306,
+        "host" => "localhost",
+        "port" => 8889,
         "user" => "root",
         "password" => "root",
         "dbname" => "quiz",

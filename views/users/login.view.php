@@ -2,12 +2,10 @@
 
     ob_start();
 
-    require("views/components/navbar.php");
-
 ?>
-
+<link rel="stylesheet" href="css/style.css">
 <div class="mainContent">
-    <h1 class="mainText">login</h1>
+    <h1 class="mainText">Login</h1>
 
     <form method="POST" class="loginForm">
         <label for="username">username</label>
@@ -16,15 +14,21 @@
         <input type="password" name="password" class="password">
 
         <button>submit</button>
+
+            <p class="authSwitch">
+                Don't have an account?
+                <a href="/register">Register</a>
+            </p>
+
     </form>
 
-    <?php if(!empty($errors)) {
+  <?php if(!empty($errors)) {
 
-        foreach($errors as $error) {
-            echo $error;
-        }
+    foreach($errors as $error) {
+        echo "<p class='error'>$error</p>";
+    }
 
-    } ?>
+} ?>
 
 </div>
 

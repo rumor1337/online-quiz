@@ -46,3 +46,161 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+    height: 100vh;
+}
+
+/* Main container */
+.mainContent {
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.mainText {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form layout */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Labels */
+.loginForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.registerForm label {
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #555;
+}
+
+/* Inputs */
+.loginForm input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.registerForm input {
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	transition: 0.3s;
+}
+
+/* Input focus effect */
+.loginForm input:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.registerForm input:focus {
+	border-color: #4facfe;
+	outline: none;
+	box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Button */
+.loginForm button {
+    padding: 10px;
+    background: #4facfe;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registerForm button {
+	padding: 10px;
+	background: #4facfe;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* Button hover */
+.loginForm button:hover {
+    background: #00c6ff;
+}
+
+.registerForm button:hover {
+	background: #00c6ff;
+}	
+
+/* Error messages */
+.mainContent p,
+.mainContent .error {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.authSwitch {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Link style */
+.authSwitch a {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.authSwitch a:hover {
+    color: #00c6ff;
+    text-decoration: underline;
+}
+.error {
+    background: #ffe6e6;
+    color: #cc0000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ffcccc;
+}
+

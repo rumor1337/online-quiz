@@ -2,6 +2,7 @@
 
     ob_start();
 
+    require("views/components/navbar.php");
     
 ?>
 <link rel="stylesheet" href="css/style.css">

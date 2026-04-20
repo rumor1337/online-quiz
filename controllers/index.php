@@ -1,16 +1,18 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz</title>
-    <link rel="stylesheet" href="css/quiz.css">
-</head>
-<body>
+<?php
+
+    ob_start();
+    session_start();
+
+    require "Sessions.php";
+
+    $customStyle = "css/quiz.css";
+    require("views/components/navbar.php");
+    
+    Sessions::validate();
+
+?>
 
 <div class="box">
-
     <div class="dropdown-box">
         
         <h2 class="title">Choose a Topic</h2>
@@ -35,21 +37,6 @@
 </div>
 <script src="js/quiz.js"></script>
 
-</body>
-</html>
-=======
-<?php
-
-    ob_start();
-    session_start();
-    require "Sessions.php";
-
-    require("views/components/navbar.php");
-    
-?>
-
-main page
-
 <?php
 
     $content = ob_get_clean();
@@ -57,4 +44,3 @@ main page
     require("views/components/layout.php");
 
 ?>
->>>>>>> 5da1286c256c691c71a1e28c3a637dafc2066397

@@ -8,7 +8,6 @@ class Sessions {
     }
 
     public static function set($username, $rights) {
-
         self::init();
 
         $_SESSION['username'] = $username;

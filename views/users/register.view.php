@@ -9,7 +9,7 @@
 <div class="mainContent">
     <h1 class="mainText">Register</h1>
 
-    <form method="POST" class="registerForm">
+    <form method="POST" class="accountForm">
         <label for="username">username</label>
         <input type="text" name="username" class="username">
         <label for="password">password</label>
@@ -24,13 +24,13 @@
 
     </form>
 
-<?php if(!empty($errors)) {
+    <?php if(!empty($errors)) {
 
-    foreach($errors as $error) {
-        echo "<p class='error'>$error</p>";
-    }
+        foreach($errors as $error) {
+            echo "<p class='error'>$error</p>";
+        }
 
-} ?>
+    } ?>
 
 
 </div>

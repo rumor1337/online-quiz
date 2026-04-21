@@ -9,7 +9,7 @@
 <div class="mainContent">
     <h1 class="mainText">Login</h1>
 
-    <form method="POST" class="loginForm">
+    <form method="POST" class="accountForm">
         <label for="username">username</label>
         <input type="text" name="username" class="username">
         <label for="password">password</label>

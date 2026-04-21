@@ -5,7 +5,6 @@
 
     require "Sessions.php";
 
-    $customStyle = "css/quiz.css";
     require("views/components/navbar.php");
     
     Sessions::validate();

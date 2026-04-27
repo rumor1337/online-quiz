@@ -7,9 +7,15 @@ if (!Sessions::validate() || !Rights::checkRights('all')) {
     exit();
 }
 
-$questions = $db->query("SELECT * FROM questions WHERE topic = :topic", [
-    "topic" => $_SESSION['quiz_topic']
-])->fetchAll();
+if (!isset($_SESSION['quiz_topic']) || !isset($_SESSION['user_answers'])) {
+    http_response_code(400);
+    header("Location: /quiz");
+    exit();
+}
+
+$questionRepository = new QuestionRepository($db);
+
+$questions = $questionRepository->getByTopic($_SESSION['quiz_topic']);
 
 $score = 0;
 $total = count($questions);

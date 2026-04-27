@@ -9,6 +9,7 @@
     <div class="dropdown-box">
         
         <form action="/quiz" method="POST">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
 
             <h1 class="choiceText">Select your choice</h1>
 

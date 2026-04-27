@@ -11,11 +11,21 @@ if (!Sessions::validate() || !Rights::checkRights('all')) {
 $pageTitle = "Pievienot topiku";
 $errors = [];
 
-if($_SERVER['REQUEST_METHOD'] == "POST") {
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 
-    $db->query("INSERT INTO topics (name) VALUES (:name)", [
-        "name" => $_POST['name']
-    ]);
+if($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        http_response_code(403);
+        $errors[] = "CSRF token validation failed";
+    } else {
+
+        $db->query("INSERT INTO topics (name) VALUES (:name)", [
+            "name" => $_POST['name']
+        ]);
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
 }
 
 

@@ -31,10 +31,7 @@ class Sessions {
             
             return false;
         }
-        if (empty($_SESSION)) {
-            self::discard();
-            session_start();
-
+        if (empty($_SESSION['username'])) {
             return false;
         }
         return true;

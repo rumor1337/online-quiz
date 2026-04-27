@@ -10,6 +10,7 @@
     <h1 class="mainText">Login</h1>
 
     <form method="POST" class="accountForm">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
         <label for="username">username</label>
         <input type="text" name="username" class="username">
         <label for="password">password</label>

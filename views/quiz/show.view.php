@@ -14,6 +14,7 @@
         <h3><?= htmlspecialchars($currentQuestion['question']) ?></h3>
 
         <form method="POST">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
             <div class="options">
                 <?php for($i = 1; $i <= 4; $i++): ?>
                     <label class="option-block">

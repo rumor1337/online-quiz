@@ -10,6 +10,5 @@ return [
     "/results" => "controllers/quiz/results.php",
     '/admin' => 'controllers/admin/index.php',
     "/admin/quiz/create" => "controllers/admin/quiz/create.php",
-    "/admin/topic/create" => "controllers/admin/topic/create.php",
-    "/admin/quiz/import" => "controllers/admin/quiz/import.php"
+    "/admin/topic/create" => "controllers/admin/topic/create.php"
 ];

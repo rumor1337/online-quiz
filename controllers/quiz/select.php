@@ -10,6 +10,10 @@ if (!Sessions::validate() || !Rights::checkRights('all')) {
     exit();
 }
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $topics = $db->query("SELECT * FROM topics")->fetchAll();
 
 require "views/quiz/select.view.php";

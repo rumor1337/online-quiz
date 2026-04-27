@@ -10,6 +10,7 @@
     </header>
 
     <form action="/admin/topic/create" method="POST" class="admin-form">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
         <div class="form-group">
             <label for="name">Topika nosaukums</label>
             <input type="text" id="name" name="name" required placeholder="Ievadiet topika nosaukumu">

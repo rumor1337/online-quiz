@@ -11,20 +11,30 @@ if (Sessions::validate()) {
 $pageTitle = "login page";
 $errors = [];
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username"] ?? '';
-    $password = $_POST["password"] ?? '';
+    if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        http_response_code(403);
+        $errors['csrf'] = "CSRF token validation failed";
+    } else {
+        $username = $_POST["username"] ?? '';
+        $password = $_POST["password"] ?? '';
 
-    $user = $db->query("SELECT * FROM users WHERE username = :username", ["username" => $username])->fetch();
+        $user = $db->query("SELECT * FROM users WHERE username = :username", ["username" => $username])->fetch();
 
-    if ($user && password_verify($password, $user['password'])) {
-        Sessions::set($user['username'], $user['rights']);
+        if ($user && password_verify($password, $user['password'])) {
+            Sessions::set($user['username'], $user['rights']);
 
-        header("Location: /");
-        exit();
+            header("Location: /");
+            exit();
+        }
+
+        $errors['login'] = "Password or username incorrect";
     }
-
-    $errors['login'] = "Password or username incorrect";
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
 require "views/users/login.view.php";

@@ -10,6 +10,8 @@
     </header>
 
     <form action="/admin/quiz/create" method="POST" class="admin-form">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
+        
         <div class="form-group">
             <label for="question">Jautājums</label>
             <input type="text" id="question" name="question" required placeholder="Ievadiet jautājumu...">

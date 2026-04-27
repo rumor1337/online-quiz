@@ -1,11 +1,9 @@
 <?php
 
-require "Sessions.php";
-require "Validator.php";
-
 session_start();
 
 if (Sessions::validate()) {
+    http_response_code(401);
     header("Location: /");
     exit();
 }

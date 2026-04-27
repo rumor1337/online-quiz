@@ -1,6 +1,6 @@
 <?php
 
-$routes = require "routes.php";
+$routes = require "Core/routes.php";
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 if(array_key_exists($uri, $routes)) {

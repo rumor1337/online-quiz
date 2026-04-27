@@ -268,3 +268,8 @@ accountForm button {
     font-weight: 600;
     text-decoration: none;
 }
+
+.temporaryText {
+    color: white;
+    font-size: 32px;
+}

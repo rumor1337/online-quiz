@@ -6,5 +6,9 @@
         <?php } else {?>
             <a class="link" href="/logout">logout</a>
         <?php }?>
+        <?php if(!empty($_SESSION) && $_SESSION['rights'] == 'admin') {?>
+            <a class="link" href="/admin">admin panel</a>
+        <?php } ?>
+
     </nav>
 </header>

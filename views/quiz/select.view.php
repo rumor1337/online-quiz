@@ -11,7 +11,7 @@
         <form action="/quiz" method="POST">
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
 
-            <h1 class="choiceText">Select your choice</h1>
+            <h1 class="choiceText">Izvēlieties tematu</h1>
 
             <select name="topic" id="topic">
                 <?php foreach($topics as $topic): ?>
@@ -19,7 +19,7 @@
                 <?php endforeach; ?>
             </select>
 
-            <button class="submitButton">submit</button>
+            <button class="submitButton">Izvēlēties</button>
         </form>
 
     </div>

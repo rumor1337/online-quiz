@@ -20,7 +20,7 @@ if (empty($_SESSION['csrf_token'])) {
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         http_response_code(403);
-        $errors['csrf'] = "CSRF token validation failed";
+        $errors['csrf'] = "CSRF verifikācija neizdevās.";
     } else {
         $question = new Question(
             $_POST['topic'] ?? null,
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             exit();
         } catch (Exception $e) {
             http_response_code(500);
-            $errors['insert'] = "Failed to add question: " . $e->getMessage();
+            $errors['insert'] = "Neizdevās pievienot jautājumu: " . $e->getMessage();
         }
     }
 }

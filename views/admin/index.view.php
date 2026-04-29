@@ -11,7 +11,6 @@
 
     <a href="/admin/quiz/create">izveidot testu</a>
     <a href="/admin/topic/create">izveidot topiku</a>
-    <a href="/admin/quiz/import">importēt caur JSON</a>
 
 </div>
 

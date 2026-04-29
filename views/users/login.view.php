@@ -7,20 +7,20 @@
 ?>
 <link rel="stylesheet" href="css/style.css">
 <div class="mainContent">
-    <h1 class="mainText">Login</h1>
+    <h1 class="mainText">pieteikties</h1>
 
     <form method="POST" class="accountForm">
         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
-        <label for="username">username</label>
+        <label for="username">lietotājvārds</label>
         <input type="text" name="username" class="username">
-        <label for="password">password</label>
+        <label for="password">parole</label>
         <input type="password" name="password" class="password">
 
-        <button>submit</button>
+        <button>pieteikties</button>
 
             <p class="authSwitch">
-                Don't have an account?
-                <a href="/register">Register</a>
+                neesi lietotājs?
+                <a href="/register">reģistrēties</a>
             </p>
 
     </form>

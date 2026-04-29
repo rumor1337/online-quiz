@@ -8,7 +8,7 @@ if (Sessions::validate()) {
     exit();
 }
 
-$pageTitle = "register page";
+$pageTitle = "reģistrēties";
 $errors = [];
 
 if (empty($_SESSION['csrf_token'])) {
@@ -18,17 +18,17 @@ if (empty($_SESSION['csrf_token'])) {
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         http_response_code(403);
-        $errors['csrf'] = "CSRF token validation failed";
+        $errors['csrf'] = "CSRF verifikācija neizdevās";
     } else {
         $username = $_POST["username"] ?? '';
         $password = $_POST["password"] ?? '';
 
         if (!Validator::string($username, 3, 255)) {
-            $errors['username'] = "Username must be between 3 and 255 characters.";
+            $errors['username'] = "Lietotājvārda garums jābūt 3 līdz 255 simboliem.";
         }
 
         if (!Validator::string($password, 8)) {
-            $errors['password'] = "Password must be at least 8 characters.";
+            $errors['password'] = "Paroles garums jābūt vismaz 8 simboliem.";
         }
 
         if (empty($errors)) {
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 exit();
             }
 
-            $errors['register'] = "User already registered";
+            $errors['register'] = "Lietotājs jau ir reģistrēts";
         }
     }
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));

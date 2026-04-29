@@ -18,7 +18,7 @@ if (empty($_SESSION['csrf_token'])) {
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         http_response_code(403);
-        $errors[] = "CSRF token validation failed";
+        $errors[] = "CSRF verifikācija neizdevās";
     } else {
 
         $db->query("INSERT INTO topics (name) VALUES (:name)", [

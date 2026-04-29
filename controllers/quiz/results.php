@@ -7,7 +7,7 @@ if (!Sessions::validate() || !Rights::checkRights('all')) {
     exit();
 }
 
-if (!isset($_SESSION['quiz_topic']) || !isset($_SESSION['user_answers'])) {
+if (!isset($_SESSION['quiz_topic']) || !isset($_SESSION['user_answers']) || empty($_SESSION['user_answers'])) {
     http_response_code(400);
     header("Location: /quiz");
     exit();

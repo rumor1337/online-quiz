@@ -1,0 +1,168 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'MerchantCopy';
+    src: url('./fonts/merchantcopy.woff') format('woff');
+}
+
+
+body {
+    font-family: MerchantCopy;
+    background-color: rgb(245,245,245);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1.3333rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+}
+
+.navbar > a {
+    color: black;
+    font-size: 1.777rem;
+}
+
+.box {
+    font-size: 1.2222rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.mainContent {
+    font-size: 1.2222rem;
+    margin-top: 5rem;
+    margin-left: 2.7757757575757575rem;
+}
+
+.mainText {
+    font-size: 1.777777rem;
+    margin-bottom: .3363636363636rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.temporaryText {
+    font-size: 1.4545rem;
+    margin-bottom: .77777777rem;
+}
+
+.accountForm {
+    display: flex;
+    flex-direction: column;
+    width: 333px;
+    margin-top: .55555rem;
+}
+
+
+
+/* globali cuz idgaf */
+button {
+    font-family: merchantcopy;
+    margin-top: .77777777rem;
+    font-size: 1.2222rem;
+    padding: .37373737rem;
+    border-style: none;
+    text-align: left;
+}
+
+label {
+    font-size: 1.2222rem;
+    margin-bottom: .22222rem;
+    margin-top: .232323223rem;
+    font-weight: 500;
+}
+
+input {
+    border-style: dotted;
+    background: none;
+    font-family: merchantcopy;
+    font-size: 1.2222rem;
+}
+
+select {
+    border-style: dotted;
+    background: none;
+    font-family: merchantcopy;
+    font-size: 1.2222rem;
+    padding: .37373737rem;
+}
+
+.authSwitch {
+    margin-top: .77777777rem;
+    font-size: 1.2222rem;
+    color: #555;
+}
+
+a {
+    color: #d3b4f0;
+}
+
+.choiceText {
+    font-weight: 600;
+    font-size: 1.4545rem;
+}
+
+.question {
+    margin-top: 1.3333rem;
+    font-size: 1.7777rem;
+}
+
+.correctAnswer {
+    font-size: 1.2222rem;
+}

@@ -8,7 +8,7 @@ if (Sessions::validate()) {
     exit();
 }
 
-$pageTitle = "login page";
+$pageTitle = "pieteikties";
 $errors = [];
 
 if (empty($_SESSION['csrf_token'])) {
@@ -18,7 +18,7 @@ if (empty($_SESSION['csrf_token'])) {
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         http_response_code(403);
-        $errors['csrf'] = "CSRF token validation failed";
+        $errors['csrf'] = "CSRF verifikācija neizdevās";
     } else {
         $username = $_POST["username"] ?? '';
         $password = $_POST["password"] ?? '';
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         }
 
-        $errors['login'] = "Password or username incorrect";
+        $errors['login'] = "Parole vai lietotājvārds ir nepareizs";
     }
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }

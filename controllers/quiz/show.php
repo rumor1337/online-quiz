@@ -10,7 +10,6 @@ if (!Sessions::validate() || !Rights::checkRights('all')) {
     exit();
 }
 
-
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -57,5 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['next_question'])) {
 
 $currentQuestion = $questions[$_SESSION['currentPosition']];
 $totalQuestions = count($questions);
+
+$optionOrder = [1, 2, 3, 4];
+shuffle($optionOrder);
 
 require "views/quiz/show.view.php";

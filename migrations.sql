@@ -18,3 +18,13 @@ CREATE TABLE topics (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(64)
 );
+
+CREATE TABLE IF NOT EXISTS high_scores (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username VARCHAR(25) NOT NULL,
+    topic_id INT NOT NULL,
+    score INT NOT NULL,
+    total_questions INT NOT NULL,
+    completed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (topic_id) REFERENCES topics(id) ON DELETE CASCADE
+);

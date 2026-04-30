@@ -47,6 +47,11 @@ table {
 	border-spacing: 0;
 }
 
+/* Responsive viewport */
+html {
+	font-size: 16px;
+}
+
 @font-face {
     font-family: 'MerchantCopy';
     src: url('./fonts/merchantcopy.woff') format('woff');
@@ -56,6 +61,7 @@ table {
 body {
     font-family: MerchantCopy;
     background-color: rgb(245,245,245);
+	padding: 1rem;
 }
 
 a {
@@ -65,29 +71,33 @@ a {
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    margin-bottom: 1.3333rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    max-width: 1200px;
 }
 
 .navbar > a {
     color: black;
-    font-size: 1.777rem;
+    font-size: clamp(1.2rem, 4vw, 1.777rem);
 }
 
 .box {
-    font-size: 1.2222rem;
+    font-size: clamp(1rem, 2.2vw, 1.2222rem);
     text-align: center;
-    margin: 0 auto;
-    margin-top: 5rem;
+    margin: 5rem auto 0;
+    padding: 0 1rem;
+    max-width: 800px;
 }
 
 .mainContent {
-    font-size: 1.2222rem;
+    font-size: clamp(1rem, 2.2vw, 1.2222rem);
     margin-top: 5rem;
-    margin-left: 2.7757757575757575rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    max-width: 800px;
 }
 
 .mainText {
@@ -105,8 +115,8 @@ a {
 .accountForm {
     display: flex;
     flex-direction: column;
-    width: 333px;
-    margin-top: .55555rem;
+    width: min(333px, 90vw);
+    margin: 0.55555rem auto 0;
 }
 
 
@@ -165,4 +175,165 @@ a {
 
 .correctAnswer {
     font-size: 1.2222rem;
+}
+
+h3 {
+	font-size: clamp(1.2rem, 3vw, 1.777rem);
+}
+
+button {
+	font-size: clamp(1rem, 2vw, 1.2222rem);
+	padding: clamp(0.3rem, 1vw, 0.37373737rem);
+}
+
+label {
+	font-size: clamp(1rem, 2vw, 1.2222rem);
+}
+
+input, select {
+	font-size: clamp(1rem, 2vw, 1.2222rem);
+	padding: clamp(0.3rem, 1vw, 0.37373737rem);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+
+	.navbar {
+		margin: 0.8rem auto;
+		padding: 0 0.8rem;
+	}
+
+	.box, .mainContent {
+		margin-top: 2.5rem;
+		padding: 0 0.8rem;
+		font-size: 1.5rem;
+	}
+
+	.mainText {
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.temporaryText {
+		font-size: 1.6rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.question {
+		margin-top: 1rem;
+		font-size: 1.8rem;
+	}
+
+	.choiceText {
+		font-size: 1.6rem;
+	}
+
+	button {
+		font-size: 1.4rem;
+		padding: 0.5rem;
+	}
+
+	label {
+		font-size: 1.4rem;
+	}
+
+	input, select {
+		font-size: 1.4rem;
+		padding: 0.5rem;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	html {
+		font-size: 14px;
+	}
+
+	.navbar {
+		margin: 0.5rem auto;
+		padding: 0 0.5rem;
+		gap: 1rem;
+	}
+
+	.box, .mainContent {
+		margin-top: 1.5rem;
+		padding: 0 0.5rem;
+		font-size: 1.4rem;
+	}
+
+	.mainText {
+		font-size: 1.6rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.temporaryText {
+		font-size: 1.4rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.authSwitch {
+		font-size: 1.2rem;
+	}
+
+	button {
+		font-size: 1.2rem;
+		padding: 0.4rem;
+	}
+
+	label {
+		font-size: 1.2rem;
+	}
+
+	input, select {
+		font-size: 1.2rem;
+		padding: 0.4rem;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+	}
+}
+
+.scores-nav {
+	margin: 2rem 0;
+}
+
+.scores-table {
+	width: 100%;
+	margin: 2rem auto;
+	border-collapse: collapse;
+	max-width: 600px;
+}
+
+.scores-table thead tr {
+	border-bottom: 2px solid #333;
+}
+
+.scores-table th {
+	padding: 1rem;
+	text-align: left;
+}
+
+.scores-table th:nth-child(3),
+.scores-table th:nth-child(4) {
+	text-align: center;
+}
+
+.scores-table tbody tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.scores-table td {
+	padding: 1rem;
+}
+
+.scores-table td:nth-child(3),
+.scores-table td:nth-child(4) {
+	text-align: center;
 }

@@ -8,6 +8,7 @@ return [
     "/quiz/get" => "controllers/quiz/select.php",
     "/quiz" => "controllers/quiz/show.php",
     "/results" => "controllers/quiz/results.php",
+    "/highscores" => "controllers/quiz/highscores.php",
     '/admin' => 'controllers/admin/index.php',
     "/admin/quiz/create" => "controllers/admin/quiz/create.php",
     "/admin/topic/create" => "controllers/admin/topic/create.php"

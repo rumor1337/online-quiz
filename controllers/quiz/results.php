@@ -14,6 +14,7 @@ if (!isset($_SESSION['quiz_topic']) || !isset($_SESSION['user_answers']) || empt
 }
 
 $questionRepository = new QuestionRepository($db);
+$highScoreRepository = new HighScoreRepository($db);
 
 $questions = $questionRepository->getByTopic($_SESSION['quiz_topic']);
 
@@ -34,6 +35,11 @@ foreach ($questions as $index => $q) {
         "is_correct" => $isCorrect
     ];
 }
+
+$userId = $_SESSION['username'];
+$topicId = $_SESSION['quiz_topic'];
+
+$highScoreRepository->save($userId, $topicId, $score, $total);
 
 unset($_SESSION['currentPosition']);
 unset($_SESSION['user_answers']);

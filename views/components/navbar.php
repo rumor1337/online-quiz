@@ -5,6 +5,7 @@
             <a class="link" href="/login">pieteikties</a>
         <?php } else {?>
             <a class="link" href="/logout">atteikties</a>
+            <a class="link" href="/highscores">augstākie rezultāti</a>
         <?php }?>
         <?php if(!empty($_SESSION['username']) && $_SESSION['rights'] == 'admin') {?>
             <a class="link" href="/admin">admin</a>
